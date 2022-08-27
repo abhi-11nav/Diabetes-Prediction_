@@ -1,0 +1,68 @@
+ <!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+	<meta charset = "UTF=8">
+	<title> DIABETES DETECTOR MODEL </title>
+	<style type="text/css">
+		form{
+			margin-left: 600px;	
+		}
+		h1{
+			text-align: center;
+			background-color: lightgray;
+			padding: 0px 20px 0px;
+		}
+		label{
+			padding-bottom: 20px;
+		}
+		.features{
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+
+		button{
+			padding: 10px;
+			font-size: 15px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="login">
+		<h1> DIABETES DETECTOR  </h1>
+		<form action="{{ url_for('predict')}}"method="post">
+
+    		<input class="features" type="number" name="pregnancies" placeholder="PREGNANCIES" required="required"/><br>
+
+        	<input class="features" type="number" name="Glucose" placeholder="Glucose" required="required"/><br>
+
+			<input class="features" type="number" name="blood_pressure" placeholder="blood_pressure" required="required"/><br>
+
+			<input class="features" type="number" name="skin_thickness" placeholder="skin_thickness" required="required"/><br>
+
+			<input class="features" type="number" inputmode="decimal" name="insulin" placeholder="insulin" required="required"/><br>
+
+			<input class="features" type="number" inputmode="decimal" name="bmi" placeholder="bmi" required="required"/><br>
+
+			<input class="features" type="number" inputmode="decimal" name="dpf" placeholder="dpf" required="required"/><br>
+
+			<input class="features" type="number" inputmode="decimal" name="age" placeholder="age" required="required"/><br>
+
+
+        	<button type="SUBMIT" class="btn btn-primary btn-block btn-large">predict</button>
+    	</form>
+
+  		 <br>
+   		<br>
+   		
+   		<div id="prediction_text">
+   		{{ prediction_text }}
+   		</div>
+
+ 	</div>
+
+</body>
+</html> 
+</body>
